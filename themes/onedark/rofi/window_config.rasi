@@ -1,0 +1,55 @@
+configuration {
+    font: "Jetbrains Mono Nerd Font 10";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-window: "";
+}
+
+@theme "/dev/null"
+@import "colors.rasi"
+
+* {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+window {
+    background-color: @bg;
+    text-color: @mono-1;
+    border: 2;
+    border-color: @border;
+    border-radius: 8;
+    width: 768;
+}
+
+inputbar {
+    background-color: @bg-dark;
+    border: 0 0 2 0;
+    border-color: @border;
+    padding: 16;
+    spacing: 16;
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: @mono-3;
+}
+
+listview {
+    padding: 16;
+    lines: 8;
+}
+
+element {
+    padding: 8 16;
+    border-radius: 4;
+    spacing: 8;
+}
+
+element selected {
+    background-color: @bg-light;
+    text-color: #ffffff;
+}
+textbox {
+    padding: 16;
+}

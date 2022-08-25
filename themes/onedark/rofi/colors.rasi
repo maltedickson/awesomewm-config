@@ -1,0 +1,23 @@
+* {
+    mono-1: #abb2bf; // default text
+    mono-2: #828997;
+    mono-3: #5c6370;
+    mono-4: #626d84; // @syntax-gutter
+
+    bg-light: #333842;
+    bg: #282c34;
+    bg-dark: #21252b;
+
+    border: #181a1f;
+
+    cyan: #56b6c2; // <-cyan @hue-1
+    blue: #61afef; // <-blue @hue-2
+    blue-alt: #528bff; // @syntax-accent
+    purple: #c678dd; // <-purple @hue-3
+    green: #97c278; // <-green @hue-4
+    red: #e06c75; // <-red 1 @hue-5
+    red-alt: #be5046; // <-red 2 @hue-5-2
+    orange: #d19a66; // <-orange 1 @hue-6
+    orange-alt: #e5c07b; // <-orange 2 @hue-6-2
+    transparent: #00000000;
+}

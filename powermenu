@@ -1,0 +1,60 @@
+#!/usr/bin/bash
+
+while getopts p:c:i: flag
+do
+    case "${flag}" in
+        p)
+            powermenu_config=" -config ${OPTARG}"
+            ;;
+        c)
+            confirmation_config=" -config ${OPTARG}"
+            ;;
+        i)
+            image=" -i ${OPTARG}"
+            ;;
+    esac
+done
+
+lock="Lock"
+suspend="Suspend"
+poweroff="Power Off"
+reboot="Reboot"
+
+yes="Yes"
+no="No"
+
+confirm() {
+    echo -e "$yes\n$no" | rofi -dmenu -p "Confirmation" -mesg "Are you sure?" $confirmation_config
+}
+
+run_rofi() {
+    echo -e "$lock\n$suspend\n$poweroff\n$reboot" | rofi -dmenu -i -p "Power Menu" -mesg "Uptime: $uptime" $powermenu_config
+}
+
+uptime=$(uptime -p | sed -e 's/up //g')
+chosen="$(run_rofi)"
+case $chosen in
+    $lock)
+        i3lock $image
+        ;;
+    $suspend)
+        i3lock $image
+        systemctl suspend
+        ;;
+    $poweroff)
+        selected="$(confirm)"
+        if [[ "$selected" == "$yes" ]]; then
+            systemctl poweroff
+        fi
+        ;;
+    $reboot)
+        selected="$(confirm)"
+        if [[ "$selected" == "$yes" ]]; then
+            systemctl reboot
+        fi
+        ;;
+    *)
+        exit 1
+        ;;
+esac
+
