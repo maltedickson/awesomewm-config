@@ -35,10 +35,10 @@ uptime=$(uptime -p | sed -e 's/up //g')
 chosen="$(run_rofi)"
 case $chosen in
     $lock)
-        i3lock $image
+        /home/malte/.config/awesome/lockscreen
         ;;
     $suspend)
-        i3lock $image
+        /home/malte/.config/awesome/lockscreen
         systemctl suspend
         ;;
     $poweroff)

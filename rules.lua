@@ -44,7 +44,7 @@ awful.rules.rules = {
                 "Wpa_gui",
                 "veromix",
                 "xtightvncviewer",
-                "Bitwarden"
+                "Bitwarden",
             },
 
             -- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -55,6 +55,7 @@ awful.rules.rules = {
             role = {
                 "AlarmWindow",  -- Thunderbird's calendar.
                 "ConfigManager",  -- Thunderbird's about:config.
+                "Msgcompose",
                 "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
             }
         },

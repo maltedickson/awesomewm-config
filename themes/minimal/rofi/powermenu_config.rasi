@@ -1,0 +1,52 @@
+configuration {
+    font: "Jetbrains Mono Nerd Font 10";
+}
+
+@theme "/dev/null"
+@import "colors.rasi"
+
+* {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+window {
+    background-color: @bg;
+    text-color: @mono-1;
+    border: 1;
+    border-color: @border;
+    width: 256;
+}
+
+inputbar {
+    background-color: @bg-dark;
+    border: 0 0 1 0;
+    border-color: @border;
+    padding: 16;
+    spacing: 8;
+
+    children: [ prompt ];
+}
+
+listview {
+    padding: 16;
+    lines: 4;
+}
+
+element {
+    padding: 8 16;
+}
+
+element selected {
+    background-color: @bg-light;
+    text-color: #ffffff;
+}
+
+message {
+    border: 0 0 1 0;
+    border-color: @border;
+}
+
+textbox {
+    padding: 16;
+}

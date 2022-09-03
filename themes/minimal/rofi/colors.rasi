@@ -1,0 +1,8 @@
+* {
+    clr-bg: #000000;
+    clr-bg-focus: #202020;
+    clr-text: #999999;
+    clr-text-focus: #ffffff;
+    clr-text-dimmed: #808080;
+    clr-border: #404040;
+}

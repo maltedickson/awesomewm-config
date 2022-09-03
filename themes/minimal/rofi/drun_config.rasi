@@ -1,0 +1,57 @@
+configuration {
+    font: "Inter 12";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: "Apps:";
+}
+
+@theme "/dev/null"
+@import "colors.rasi"
+
+* {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+window {
+    background-color: @clr-bg;
+    text-color: @clr-text;
+    border: 1;
+    border-color: @clr-border;
+    width: 768;
+}
+
+mainbox {
+    spacing: 0;
+}
+
+inputbar {
+    background-color: @clr-bg;
+    border: 0 0 1 0;
+    border-color: @clr-border;
+    padding: 16;
+    spacing: 8;
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: @clr-text-dimmed;
+}
+
+listview {
+    lines: 8;
+    padding: 8;
+}
+
+element {
+    padding: 8;
+    spacing: 8;
+}
+
+element selected {
+    background-color: @clr-bg-focus;
+    text-color: @clr-text-focus;
+}
+textbox {
+    padding: 16;
+}

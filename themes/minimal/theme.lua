@@ -14,16 +14,16 @@ local config_path = gfs.get_configuration_dir()
 
 local clr = {}
 
-clr.mono_1 = "#abb2bf" -- default text
-clr.mono_2 = "#828997"
-clr.mono_3 = "#5c6370"
-clr.mono_4 = "#626d84" -- @syntax-gutter
+clr.mono_1 = "#b3b3b3" -- default text
+clr.mono_2 = "#8c8c8c"
+clr.mono_3 = "#666666"
+clr.mono_4 = "#737373" -- @syntax-gutter
 
-clr.bg_light = "#333842"
-clr.bg = "#282c34"
-clr.bg_dark = "#21252b"
+clr.bg_light = "#515151"
+clr.bg = "#414141"
+clr.bg_dark = "#323232"
 
-clr.border = "#181a1f"
+clr.border = "#252525"
 
 clr.cyan = "#56b6c2" -- <-cyan @hue-1
 clr.blue = "#61afef" -- <-blue @hue-2
@@ -34,24 +34,27 @@ clr.red = "#e06c75" -- <-red 1 @hue-5
 clr.red_alt = "#be5046" -- <-red 2 @hue-5-2
 clr.orange = "#d19a66" -- <-orange 1 @hue-6
 clr.orange_alt = "#e5c07b" -- <-orange 2 @hue-6-2
+
+clr.white = "#ffffff"
+clr.black = "#000000"
 clr.transparent = "#00000000"
 
 local theme = {}
 
-theme.path = config_path .. "themes/onedark/"
+theme.path = config_path .. "themes/minimal/"
 
-theme.font = "Jetbrains Mono 10"
+theme.font = "Inter Medium 10"
 
 
-theme.useless_gap = 4
+theme.useless_gap = 0
 
-theme.border_width = 2
+theme.border_width = 1
 
-theme.border_normal = clr.border
-theme.border_focus = clr.blue
+theme.border_normal = clr.black
+theme.border_focus = clr.white
 
-theme.bg_normal = clr.bg_dark
-theme.bg_focus = clr.bg_light
+theme.bg_normal = clr.black
+theme.bg_focus = clr.bg
 theme.bg_urgent = clr.bg_dark
 theme.bg_minimize = clr.bg_light
 
@@ -61,15 +64,15 @@ theme.fg_urgent = clr.red
 theme.fg_minimize = clr.mono_4
 
 
-theme.taglist_font = "Jetbrains Mono Bold 10"
-theme.taglist_shape = gears.shape.circle
-theme.taglist_bg_focus = clr.transparent
-theme.taglist_fg_focus = clr.blue
+theme.taglist_font = "Inter Bold 10"
+theme.taglist_shape = gears.shape.rectangle
+theme.taglist_bg_focus = clr.bg_light
+theme.taglist_fg_focus = clr.white
 theme.taglist_fg_empty = clr.mono_3
 theme.taglist_fg_occupied = clr.mono_1
 theme.taglist_fg_urgent = clr.red
 theme.taglist_spacing = 8
-theme.taglist_margin = 4
+theme.taglist_margin = 5
 
 -- Margins
 
@@ -92,8 +95,8 @@ local wallpaper_dir = "/home/malte/wallpapers/"
 -- }
 
 local wallpapers = {
-    theme.path .. "wallpapers/leaves.png",
-    theme.path .. "wallpapers/leaves.png"
+    theme.path .. "wallpapers/gray_20.png",
+    theme.path .. "wallpapers/gray_20.png"
 }
 
 theme.wallpaper = function(s)
@@ -108,7 +111,7 @@ theme.confirmation_config_path = theme.path .. "rofi/confirmation_config.rasi"
 theme.calc_config_path = theme.path .. "rofi/calc_config.rasi"
 theme.lockscreen_image = theme.path .. "wallpapers/leaves-dual-monitor-lock-screen.png"
 
-theme.picom = "picom --experimental-backends --config " .. theme.path .. "picom.conf"
+-- theme.picom = "picom --experimental-backends --config " .. theme.path .. "picom.conf"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"

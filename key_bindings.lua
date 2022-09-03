@@ -62,7 +62,7 @@ globalkeys = gears.table.join(
             end
             awful.spawn("rofi -show drun -modi drun" .. config)
         end,
-        {description = "Rofi drun", group = "launcher"}),
+        {description = "drun", group = "rofi"}),
 
     awful.key({ modkey, }, "r", function ()
             local config = ""
@@ -71,7 +71,7 @@ globalkeys = gears.table.join(
             end
             awful.spawn("rofi -show run -modi run" .. config)
         end,
-        {description = "Rofi run", group = "launcher"}),
+        {description = "run", group = "rofi"}),
 
     awful.key({ modkey, }, "w", function ()
             local config = ""
@@ -80,7 +80,16 @@ globalkeys = gears.table.join(
             end
             awful.spawn("rofi -show window -modi window" .. config)
         end,
-        {description = "Rofi window switcher", group = "launcher"}),
+        {description = "window switcher", group = "rofi"}),
+
+    awful.key({ modkey, }, "c", function ()
+            local config = ""
+            if beautiful.calc_config_path then
+                config = " -config " .. beautiful.calc_config_path
+            end
+            awful.spawn("rofi -show calc -modi calc -no-show-match -no-sort" .. config)
+        end,
+        {description = "calc", group = "rofi"}),
 
     awful.key({ modkey, }, "q", function ()
             local powermenu_config = ""
@@ -101,7 +110,7 @@ globalkeys = gears.table.join(
             awful.spawn(output)
             -- powermenu -c /path/to/config -i /path/to/image
         end,
-        {description = "Rofi window switcher", group = "launcher"}),
+        {description = "power menu", group = "rofi"}),
 
     awful.key({ modkey, "Control" }, "r", awesome.restart,
         {description = "reload awesome", group = "awesome"}),
